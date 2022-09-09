@@ -20,10 +20,11 @@ public class RadioService {
         this.currentNumberStation = currentNumberStation;
     }
 
-    public void increaseVolume(int newCurrentVolume) {
+    public int increaseVolume(int newCurrentVolume) {
         if (currentVolume < 10) {
             currentVolume = currentVolume + 1;
         }
+        return newCurrentVolume;
     }
 
     public void nextNumberStation() {
