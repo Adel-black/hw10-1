@@ -1,6 +1,17 @@
 public class RadioService {
     public int currentVolume;
     public int currentNumberStation;
+    public int maxStation;
+
+    public RadioService() {
+        maxStation = 9;
+
+    }
+
+    public RadioService(int countStations) {
+        maxStation = countStations -1;
+
+    }
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -14,7 +25,7 @@ public class RadioService {
         if (currentNumberStation < 0) {
             return;
         }
-        if (currentNumberStation > 9) {
+        if (currentNumberStation > maxStation) {
             return;
         }
         this.currentNumberStation = currentNumberStation;
@@ -28,7 +39,7 @@ public class RadioService {
     }
 
     public void nextNumberStation() {
-        if (currentNumberStation < 9) {
+        if (currentNumberStation < maxStation) {
             currentNumberStation = currentNumberStation + 1;
         } else {
             currentNumberStation = 0;
@@ -39,9 +50,10 @@ public class RadioService {
         if (currentNumberStation > 0) {
             currentNumberStation = currentNumberStation - 1;
         } else {
-            currentNumberStation = 9;
+            currentNumberStation = maxStation;
         }
     }
+
 }
 
 
