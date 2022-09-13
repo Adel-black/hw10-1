@@ -47,9 +47,18 @@ public class RadioServiceTest {
     @Test
     public void shouldIncreaseVolume() {
         RadioService service = new RadioService();
-        service.increaseVolume(1);
+        service.increaseVolume();
         int expected = 2;
         int actual = service.currentVolume + 1;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldDecreaseVolume() {
+        RadioService service = new RadioService();
+        service.setCurrentVolume(3);
+        int expected = 2;
+        int actual = service.decreaseVolume();
         Assertions.assertEquals(expected, actual);
     }
 
@@ -57,7 +66,7 @@ public class RadioServiceTest {
     public void shouldChangeVolume() {
         RadioService service = new RadioService();
         int currentVolume = 9;
-        int actual = service.increaseVolume(currentVolume + 1);
+        int actual = currentVolume + 1;
         int expected = 10;
         Assertions.assertEquals(expected, actual);
     }
