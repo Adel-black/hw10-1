@@ -30,12 +30,14 @@ public class RadioService {
         if (currentVolume < 10) {
             currentVolume = currentVolume + 1;
         }
+        return currentVolume;
     }
 
     public int decreaseVolume() {
         if (currentVolume > 0) {
             currentVolume = currentVolume - 1;
         }
+        return currentVolume;
     }
 
     public void nextNumberStation() {
